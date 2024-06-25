@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+
+{% block title %} Employee Screener {% endblock %}
+
+{% block content %}
+<h1>Employees Working</h1>
+<br>
+
+<table class="table table-bordered" style="font-size: 20px;">
+    <thead>
+      <tr>
+        <th scope="col">Sr. No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Position</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for field in dataList %}
+            <tr>
+                <th scope="row">{{ field.0 }}</th>
+                <td>{{ field.1 }}</td>
+                <td>{{ field.2 }}</td>
+                <td>{{ field.3 }}</td>
+            </tr>     
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
